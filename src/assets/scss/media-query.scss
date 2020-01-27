@@ -1,0 +1,94 @@
+@import "./variables.scss";
+
+@mixin iphoneX {
+  /* iphone X, iphoneXS, iphoneXS Max */
+  @media only screen and (min-device-width: 375px) and (min-device-height: 812px) {
+    @content;
+  }
+}
+
+@mixin iphoneXR {
+  @media only screen and (min-device-width: 414px) and (min-device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+@mixin iphone5 {
+  /* iphone 5 */
+  @media only screen and (max-device-width: 320px) and (max-device-height: 568px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  /* cellphone */
+  @media only screen and (max-device-width: 414px) {
+    @content;
+  }
+}
+
+@mixin shortPhone {
+  /* iphone 5 */
+  @media only screen and (max-height: 568px) {
+    @content;
+  }
+}
+
+@mixin ipad {
+  /* ipd */
+  @media only screen and (min-device-width: 768px) and (min-device-height: 1024px) {
+    @content;
+  }
+}
+
+@mixin ipad-pro {
+  /* ipd */
+  @media only screen and (min-device-width: 1024px) and (min-device-height: 1366px) {
+    @content;
+  }
+}
+
+@mixin iphone6-8-plus {
+  /* iphone 6 7 8 plus */
+  @media only screen and (min-device-width: 414px) and (min-device-height: 736px) {
+    @content;
+  }
+}
+
+@mixin iphone4 {
+  /* iphone 4 */
+  @media only screen and (max-device-width: 320px) and (max-device-height: 480px) {
+    @content;
+  }
+}
+
+//媒体查询
+@mixin tablet {
+  @media screen and (max-device-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-device-width: #{$laptop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-device-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin less-than-lg {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin less-than-xl {
+  @media screen and (max-width: 1599px) {
+    @content;
+  }
+}

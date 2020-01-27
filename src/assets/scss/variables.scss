@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+// switch
+//-----------------------------------------------------
+$borderBoxSwitch: true !default; // true为*{box-sizing:border-box;}
+
+// font相关
+//-----------------------------------------------------
+$font-size: 14px !default;
+$pad-font-size: 12px !default;
+$font-line-height: 1.5 !default;
+$font-family: Arial, "Times New Roman", "Microsoft YaHei", SimHei !default;
+
+// color
+$primary-color: #6067f2 !default; // 主色
+$secondary-color: #ff6b6b !default; // 辅色
+$contrast-color: #19bfbd !default; // 对比色
+$warning-color: #f30 !default; // 警示颜色
+$info-color: #598ae3 !default; // 蓝色
+$tips-color: #c5a621 !default; //提示颜色
+$link-color: #666 $primary-color !default; // 如果只有一个值则滑过的值为这个值的darken 5%，如果有两个值则第二个值为滑过的值
+$bg-color: #fff !default;
+$placeholder-color: #999 !default;
+$white: white !default;
+$black: black !default;
+$colorPrimary: $primary-color; // for wtdc components
+$colorPrimaryLight: $primary-color; // for wtdc components
+
+// text color
+$text-color: #030311 !default;
+$text-color-secondary: #313453 !default;
+$text-color-light: #bab9c7 !default;
+$text-color-gray: #999 !default;
+
+$text-color-8: rgba($text-color-secondary, 0.8);
+$text-color-6: rgba($text-color-secondary, 0.6);
+$text-color-2: rgba($text-color-secondary, 0.2);
+
+// border color
+$border-color: #ddd !default;
+$border-color-secondary: #eee !default;
+
+// bg color
+$bg-color: #e2e9ee !default;
+$bg-color-secondary: #f8f8f8 !default;
+$bg-color-light: #fafbff !default;
+
+// media
+$tablet-width: 1024px;
+$laptop-width: 1280px;
+$desktop-width: 1920px;

@@ -1,0 +1,12 @@
+@import "~@/assets/scss/base.scss";
+@import "~@/assets/scss/common.scss";
+
+.App {
+  height: 100%;
+  margin: auto;
+  cursor: url("../assets/images/cursor.png"), auto;
+
+  .cursor-pointer {
+    cursor: url("../assets/images/pointer.png"), auto;
+  }
+}

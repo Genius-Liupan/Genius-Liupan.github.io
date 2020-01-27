@@ -1,0 +1,126 @@
+@import "~@/assets/scss/function";
+
+.DashboardSlider {
+  width: 100%;
+  padding-bottom: 50px;
+  .slider-square {
+    &_container {
+      position: relative;
+      width: 62%;
+      height: 62.5vw;
+      max-height: 85vh;
+      overflow: hidden;
+    }
+
+    &_list {
+      width: 100%;
+      height: 100%;
+      white-space: nowrap;
+    }
+
+    &_item {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &_title {
+      top: 25%;
+      left: 10%;
+      font-size: 50px;
+    }
+
+    &_desc {
+      top: 42%;
+      left: 10%;
+      width: 40%;
+      font-size: 20px;
+      letter-spacing: 1px;
+      white-space: pre-wrap;
+    }
+  }
+
+  .slider-content {
+    &_container {
+      position: absolute;
+      right: 2%;
+      top: 0;
+      bottom: 0;
+      width: 55%;
+      height: 62%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    &_list {
+      height: 100%;
+      white-space: nowrap;
+    }
+
+    &_item {
+      display: inline-block;
+      height: 100%;
+    }
+
+    &_pagination {
+      &-text {
+        position: absolute;
+        right: 5px;
+        bottom: 82px;
+        display: block;
+        transform: rotate(90deg);
+        font-family: "Gotham A", "Gotham B", Arial, sans-serif;
+        font-size: 16px;
+        color: rgba(white, .8);
+      }
+
+      &-rotate {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: rgba(white, .1);
+        transition: all .3s;
+        user-select: none;
+
+        .ic {
+          @include center-translate(both);
+          color: white;
+        }
+
+        svg {
+          width: 35px;
+        }
+
+        path {
+          stroke-dasharray: 300;
+          stroke-dashoffset: 300;
+
+          @keyframes rotate {
+            from {
+              stroke-dashoffset: 300;
+            }
+
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+          animation: rotate 5s 1 forwards;
+        }
+
+        &:hover {
+          background-color: rgba(white, .3);
+        }
+      }
+    }
+  }
+
+  &.animate {
+    .transform-el {
+      transition: transform .5s ease-out;
+    }
+  }
+}
