@@ -6,6 +6,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import slider_computer_png from '@/assets/images/home/slider_computer.png';
+import slider_cellphone_png from '@/assets/images/home/slider_cellphone.png';
 import Utils from '@/utils/utils';
 
 import './Slider.scss';
@@ -128,14 +130,14 @@ class Slider extends React.PureComponent {
                 const active = index === i;
                 return (
                   <li
-                    className={classNames('slider-content_item', { active })}
+                    className={classNames('slider-content_item pos-rel', { active })}
                     style={{
                       width: `${100 / this.sliderList.length}%`,
                       backgroundImage: `radial-gradient(${item.gradientColorList.join(', ')})`
                     }}
                     key={i}
                   >
-
+                    <img className={classNames("slider-content_image", item.imgClass)} src={item.picture} alt=""/>
                   </li>
                 )
               })
@@ -164,6 +166,11 @@ class Slider extends React.PureComponent {
             </span>
           </div>
         </div>
+
+        <div className="slider-indicator text-center">
+          <span className="slider-indicator-tip">滑动</span>
+          <i className="ic ic-right" />
+        </div>
       </div>
     )
   }
@@ -176,13 +183,16 @@ const list = [
     color: '#6067f2',
     gradientColorList: ['#6067f2 0%', '#4048e6 100%'],
     title: '后台设计',
-    desc: '偏向于系统交互设计，B to C都有所涵盖'
+    desc: '偏向于系统交互设计，B to C都有所涵盖',
+    picture: slider_computer_png
   },
   {
     color: '#1ea992',
     gradientColorList: ['#1ea992 0%', '#0a947d 100%'],
     title: 'H5设计',
-    desc: '绝大数是基于微信的公众号H5网页移动端，也有小程序相关'
+    desc: '绝大数是基于微信的公众号H5网页移动端，也有小程序相关',
+    picture: slider_cellphone_png,
+    imgClass: 'slider-image-cellphone'
   }
 ];
 

@@ -114,7 +114,6 @@ class VisibilitySensor extends React.PureComponent {
       );
     }
 
-    // console.log(rect, containmentRect)
     this.setState(state)
   }
 
@@ -182,7 +181,7 @@ class VisibilitySensor extends React.PureComponent {
     }, 0);
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps) {
     const { disabled } = this.props;
     if(disabled !== prevProps.disabled) {
       if(disabled) {
