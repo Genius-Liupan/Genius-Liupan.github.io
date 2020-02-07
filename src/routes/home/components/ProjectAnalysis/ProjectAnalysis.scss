@@ -1,0 +1,24 @@
+@import "~@/assets/scss/function";
+
+.ProjectAnalysis {
+  padding: 80px 0 120px;
+  background-color: #f5f7ff;
+
+  .project-analysis-title {
+    margin-bottom: 60px;
+    font-size: 45px;
+    color: #606c93;
+  }
+
+  .analysis-pie-container {
+    width: 25%;
+    margin: auto;
+    transform: translateX(5%);
+  }
+
+  img {
+    width: 100%;
+    max-width: 600px;
+    transform: translateX(8%);
+  }
+}

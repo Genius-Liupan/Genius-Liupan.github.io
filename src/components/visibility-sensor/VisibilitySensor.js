@@ -101,7 +101,7 @@ class VisibilitySensor extends React.PureComponent {
     const state = {
       visible,
       visibilityRect,
-      onceVisible: visible || this.state.onceVisible
+      onceVisible: visible || this.state.onceVisible || this.state.partialVisible
     };
 
     if(partialVisibility) {

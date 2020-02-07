@@ -1,0 +1,15 @@
+@import "~@/assets/scss/function";
+
+.AppDesign {
+  padding-top: 80px;
+  .app-design-title {
+    margin-bottom: 50px;
+    font-size: 45px;
+    color: #606c93;
+  }
+  img {
+    width: 40%;
+    max-width: 780px;
+    transform: translateX(8%);
+  }
+}

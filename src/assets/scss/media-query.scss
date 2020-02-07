@@ -27,7 +27,14 @@
   }
 }
 
-@mixin shortPhone {
+@mixin not-phone {
+  /* cellphone */
+  @media only screen and (min-width: 415px) {
+    @content;
+  }
+}
+
+@mixin short-phone {
   /* iphone 5 */
   @media only screen and (max-height: 568px) {
     @content;
@@ -82,7 +89,7 @@
 }
 
 @mixin less-than-lg {
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 1280px) {
     @content;
   }
 }
@@ -90,5 +97,29 @@
 @mixin less-than-xl {
   @media screen and (max-width: 1599px) {
     @content;
+  }
+}
+
+@mixin responsive($attr, $desktop-lg, $desktop: $desktop-lg, $laptop: $desktop, $tablet: $laptop, $phone: $tablet) {
+  #{$attr}: $desktop-lg;
+
+  @media screen and (min-width: 1280px) {
+    #{$attr}: $desktop-lg;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1279px){
+    #{$attr}: $desktop;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+    #{$attr}: $laptop;
+  }
+
+  @media screen and (min-width: 414px) and (max-width: 767px){
+    #{$attr}: $tablet;
+  }
+
+  @media screen and (max-width: 414px){
+    #{$attr}: $phone;
   }
 }

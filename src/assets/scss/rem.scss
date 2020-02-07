@@ -1,0 +1,5 @@
+@import "~@/assets/scss/function";
+
+html {
+  @include responsive(font-size, 100PX, 90PX, 80PX, 70PX, 60PX);
+}

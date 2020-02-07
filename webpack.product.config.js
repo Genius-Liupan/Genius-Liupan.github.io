@@ -34,6 +34,17 @@ module.exports = {
           },
           //"style-loader", // 将 JS 字符串生成为 style 节点
           "css-loader",   // 将 CSS 转化成 CommonJS 模块
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              plugins: [
+                require("autoprefixer")({
+                  browsers: ["last 10 versions", "not ie < 8"]
+                })
+              ]
+            }
+          },
           "sass-loader"   // 将 Sass 编译成 CSS，默认使用 Node Sass
         ]
       },

@@ -1,0 +1,76 @@
+@import "~@/assets/scss/function";
+
+.DesignStandard {
+  height: 820px;
+  background: url("~@/assets/images/home/grid.png") #6067f2 repeat;
+  background-size: 4%;
+
+  .design-standard {
+    &-title {
+      top: 70px;
+      @include center-translate(x);
+      font-size: 50px;
+      padding: 0 25px;
+      margin: auto;
+      border: solid 1px #ffffff;
+      font-weight: bold;
+    }
+
+    &-preview-btn {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 5px 35px;
+      background-color: rgba(white, 0.1);
+      border-radius: 70px;
+      border: solid 1px #ffffff;
+      transition: background-color .3s;
+
+      &:hover {
+        background-color: rgba(white, 0.25);
+      }
+    }
+
+    &-pc {
+      transition: all .6s;
+      @include not-phone {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        width: 40vw;
+        max-width: 500px;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+
+        &:not(.active) {
+          opacity: .75;
+          transform: translate(-130%, -50%) scale(.7);
+        }
+      }
+      &-image {
+        width: 100%;
+      }
+    }
+
+    &-mobile {
+      transition: all .6s;
+
+      @include not-phone {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        width: 20vw;
+        max-width: 230px;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+
+        &:not(.active) {
+          opacity: .75;
+          transform: translate(120%, -50%) scale(.7);
+        }
+      }
+      &-image {
+        width: 100%;
+      }
+    }
+  }
+}

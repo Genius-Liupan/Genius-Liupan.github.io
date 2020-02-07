@@ -9,7 +9,7 @@
       position: relative;
       width: 62%;
       height: 62.5vw;
-      max-height: 85vh;
+      max-height: 80vh;
       overflow: hidden;
     }
 
@@ -44,7 +44,7 @@
   .slider-content {
     &_container {
       position: absolute;
-      right: 2%;
+      right: 0;
       top: 0;
       bottom: 0;
       width: 55%;
@@ -82,7 +82,7 @@
         transform: rotate(90deg);
         font-family: "Gotham A", "Gotham B", Arial, sans-serif;
         font-size: 16px;
-            color: rgba(white, .8);
+        color: rgba(white, .8);
       }
 
       &-rotate {

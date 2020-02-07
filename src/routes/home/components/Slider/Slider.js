@@ -148,7 +148,7 @@ class Slider extends React.PureComponent {
             <span className="slider-content_pagination-text">{Utils.padStart(paginationIndex)}&nbsp;&nbsp;/&nbsp;&nbsp;{Utils.padStart(list.length)}</span>
 
             <span
-              className="slider-content_pagination-rotate"
+              className="slider-content_pagination-rotate cursor-pointer"
               onClick={this.handleRotateClick}
             >
               <i className="ic ic-right" />
