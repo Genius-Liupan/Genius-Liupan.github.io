@@ -7,20 +7,25 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Switch} from "react-router-dom";
-import {bindActionCreators} from 'redux';
-import {Provider} from 'react-redux';
+import { Router } from 'react-router';
+import { Switch } from "react-router-dom";
+import { bindActionCreators } from 'redux';
+import { Provider } from 'react-redux';
 
 import createStore from "./redux/createStore";
 import middleWares from './redux/middleWares';
 import Context from './redux/context';
+import createHistory from './router/createHistory';
 
 export default class App {
-  constructor() {
+  constructor(options = {}) {
     this._routes = null;
     this._models = [];
     this._actions = {};
     this._store = null;
+
+    const { history } = options;
+    this.history = createHistory(history);
   }
 
   setRoutes(routes) {
@@ -51,24 +56,29 @@ export default class App {
   }
 
   render(container) {
-    // if(!this._store) {
-    //   throw new Error('you need to set the models before render().')
-    // }
     if(!this._routes) {
       throw new Error('you need to set the routes before render().')
     }
 
-    ReactDOM.render(
-      <Provider store={this._store}>
-        <Context.Provider value={this._actions}>
-          <Router>
-            <Switch>
-              {this._routes}
-            </Switch>
-          </Router>
-        </Context.Provider>
-      </Provider>,
-      container
+    const routes = (
+      <Router history={this.history}>
+        <Switch>
+          {this._routes}
+        </Switch>
+      </Router>
     );
+
+    let content = routes;
+    if(this._store) {
+      content = (
+        <Provider store={this._store}>
+          <Context.Provider value={this._actions}>
+            {routes}
+          </Context.Provider>
+        </Provider>
+      )
+    }
+
+    ReactDOM.render(content, container);
   }
 }

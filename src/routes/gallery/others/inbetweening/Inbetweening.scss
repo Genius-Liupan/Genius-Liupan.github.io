@@ -1,0 +1,12 @@
+@import "~@/assets/scss/function";
+
+.Inbetweening {
+  .gallery-desc {
+    padding-bottom: 50px;
+  }
+
+  .wtdc-img {
+    @include responsive(width, 62.5%, 62.5%, 80%, 100%);
+    margin: auto;
+  }
+}

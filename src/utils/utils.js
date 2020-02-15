@@ -583,6 +583,20 @@ const Utils = {
         axisSort
       };
     }
+  },
+
+  isSupportWebp() {
+    if(Utils.isSupportWebp.isSupported !== void 0) return Utils.isSupportWebp.isSupported;
+    try {
+      Utils.isSupportWebp.isSupported = document
+        .createElement('canvas')
+        .toDataURL('image/webp', 0.5)
+        .indexOf('data:image/webp') === 0;
+    } catch(err) {
+      Utils.isSupportWebp.isSupported = false;
+    }
+
+    return Utils.isSupportWebp.isSupported;
   }
 };
 

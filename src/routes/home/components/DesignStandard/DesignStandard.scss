@@ -2,18 +2,17 @@
 
 .DesignStandard {
   height: 820px;
-  background: url("~@/assets/images/home/grid.png") #6067f2 repeat;
+  background: url("https://file.5rs.me/oss/uploadfe/png/9df35e835f6837342d784c0e87bd1ed5.png") #6067f2 repeat;
   background-size: 4%;
 
   .design-standard {
     &-title {
       top: 70px;
       @include center-translate(x);
-      font-size: 50px;
+      font-size: 45px;
       padding: 0 25px;
       margin: auto;
       border: solid 1px #ffffff;
-      font-weight: bold;
     }
 
     &-preview-btn {

@@ -11,6 +11,6 @@ export default route({
   path: '/',
   component: App,
   getChildren: () => [
-    // require('./home')
+    require('./gallery')
   ]
 });

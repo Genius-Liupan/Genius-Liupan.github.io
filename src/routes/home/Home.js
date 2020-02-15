@@ -5,27 +5,24 @@
  */
 import React from 'react';
 
-import Header from './components/Header/Header';
 import Slider from './components/Slider/Slider';
-import DesignCatalog from './components/DesignCategory/DesignCategory';
+import DesignCategory from './components/DesignCategory/DesignCategory';
 import DesignStandard from './components/DesignStandard/DesignStandard';
 import AppDesign from './components/AppDesign/AppDesign';
 import ProjectAnalysis from './components/ProjectAnalysis/ProjectAnalysis';
-import Footer from './components/Footer/Footer';
 
 import './Home.scss';
 
 class Home extends React.PureComponent {
   render() {
+    const { history } = this.props;
     return (
-      <div className="Dashboard">
-        <Header />
-        <Slider />
-        <DesignCatalog />
-        <DesignStandard />
-        <AppDesign />
-        <ProjectAnalysis />
-        <Footer />
+      <div className="Home">
+        <Slider history={history} />
+        <DesignCategory history={history} />
+        <DesignStandard history={history} />
+        <AppDesign history={history} />
+        <ProjectAnalysis history={history} />
       </div>
     )
   }

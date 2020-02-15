@@ -1,0 +1,49 @@
+@import "~@/assets/scss/function";
+
+.Gallery {
+  padding: 40px 30px 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 16px 0 rgba(96, 108, 147, 0.09);
+
+  .gallery {
+    &-desc {
+      max-width: 750px;
+      padding: 0 20px 20px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 30px;
+      color: #333;
+      text-align: justify;
+    }
+
+    &-title {
+      position: relative;
+      padding: 20px 0 10px;
+      margin-bottom: 30px;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: bold;
+      color: #333;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(#ddd, .5);
+      }
+    }
+  }
+
+  .wtdc-img {
+    transition: all .3s;
+    box-shadow: 0 0 16px 0 rgba(96, 108, 147, 0.09);
+
+    &:hover {
+      box-shadow: 0 15px 33px 0 rgba(96, 108, 147, 0.22);
+      transform: translateY(-4px);
+    }
+  }
+}

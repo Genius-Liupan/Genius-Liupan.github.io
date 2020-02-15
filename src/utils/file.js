@@ -3,7 +3,7 @@
  *  Author  : CastileMan
  *  Declare : 文件相关 utils
  */
-import FileSaver from 'file-saver';
+// import FileSaver from 'file-saver';
 
 import { FILE_EXT } from '@/constants/common';
 import Utils from '@/utils/utils';
@@ -55,15 +55,15 @@ export function getFileName(fileName = '') {
 }
 
 // 保存文件
-export function saveFile(url = '', name = '') {
-  name = name.trim();
-  const ext = getFileExt(url) || 'png';
-  let fileName = name;
-  if(ext) {
-    fileName += `.${ext}`;
-  }
-  return FileSaver.saveAs(url, fileName);
-}
+// export function saveFile(url = '', name = '') {
+//   name = name.trim();
+//   const ext = getFileExt(url) || 'png';
+//   let fileName = name;
+//   if(ext) {
+//     fileName += `.${ext}`;
+//   }
+//   return FileSaver.saveAs(url, fileName);
+// }
 
 // 把文件转换成可读URL
 export function getObjectURL(file) {

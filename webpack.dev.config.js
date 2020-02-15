@@ -105,8 +105,25 @@ module.exports = {
     //    changeOrigin: true
     //  }
     //}
-  }
-  ,
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        react: {
+          test: /[\\/]node_modules[\\/]_?(react|react-dom|scheduler|prop-types|react-router|react-router-dom|redux|react-redux|redux-thunk)/,
+          name: 'react',
+          chunks: 'all',
+          priority: 10
+        },
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+          priority: 1
+        }
+      }
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.template.html',
@@ -115,5 +132,4 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
   ],
-}
-;
+};

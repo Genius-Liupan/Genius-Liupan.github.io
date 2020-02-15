@@ -6,7 +6,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import VisibilitySensor from '@/components/visibility-sensor';
+import VisibilitySensor from '@/modules/visibility-sensor';
 
 export default function FadeVisibilitySensor(props) {
   const {children, animationName} = props;

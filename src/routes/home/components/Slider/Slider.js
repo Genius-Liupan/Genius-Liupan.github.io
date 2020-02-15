@@ -6,8 +6,9 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import slider_computer_png from '@/assets/images/home/slider_computer.png';
-import slider_cellphone_png from '@/assets/images/home/slider_cellphone.png';
+import Img from '@/components/Img';
+import { HOME_SLIDER_CELLPHONE, HOME_SLIDER_COMPUTER } from "@/constants/static";
+import PAGE from "@/constants/page";
 import Utils from '@/utils/utils';
 
 import './Slider.scss';
@@ -59,7 +60,9 @@ class Slider extends React.PureComponent {
     }
   }
 
-  handleRotateClick = () => {
+  handleRotateClick = (event) => {
+    event.stopPropagation();
+    event.preventDefault();
     this.clearTimer();
     this.rotateNext();
     this.startTimer();
@@ -81,13 +84,14 @@ class Slider extends React.PureComponent {
   }
 
   render() {
+    const { history } = this.props;
     const { index, animate } = this.state;
     let paginationIndex = index + 1;
     if(index === this.sliderList.length - 1) {
       paginationIndex = 1;
     }
     return (
-      <div className={classNames('DashboardSlider pos-rel dashboard-content', { animate })}>
+      <div className={classNames('DashboardSlider pos-rel website-center-container', { animate })}>
         <div className="slider-square_container">
           <ul
             className="slider-square_list transform-el"
@@ -130,14 +134,21 @@ class Slider extends React.PureComponent {
                 const active = index === i;
                 return (
                   <li
-                    className={classNames('slider-content_item pos-rel', { active })}
+                    className={classNames('slider-content_item pos-rel cursor-pointer', { active })}
                     style={{
                       width: `${100 / this.sliderList.length}%`,
                       backgroundImage: `radial-gradient(${item.gradientColorList.join(', ')})`
                     }}
+                    onClick={() => history.push(item.path)}
                     key={i}
                   >
-                    <img className={classNames("slider-content_image", item.imgClass)} src={item.picture} alt=""/>
+                    <Img
+                      className={classNames("slider-content_image", item.imgClass)}
+                      src={item.picture}
+                      intervalCheck
+                      objectFit="contain"
+                      lazy={false}
+                    />
                   </li>
                 )
               })
@@ -184,14 +195,16 @@ const list = [
     gradientColorList: ['#6067f2 0%', '#4048e6 100%'],
     title: '后台设计',
     desc: '偏向于系统交互设计，B to C都有所涵盖',
-    picture: slider_computer_png
+    path: PAGE.PC,
+    picture: HOME_SLIDER_COMPUTER
   },
   {
     color: '#1ea992',
     gradientColorList: ['#1ea992 0%', '#0a947d 100%'],
-    title: 'H5设计',
+    title: '移动端设计',
     desc: '绝大数是基于微信的公众号H5网页移动端，也有小程序相关',
-    picture: slider_cellphone_png,
+    picture: HOME_SLIDER_CELLPHONE,
+    path: PAGE.MOBILE,
     imgClass: 'slider-image-cellphone'
   }
 ];

@@ -73,12 +73,53 @@ module.exports = {
       new OptimizeCSSAssetsPlugin({})   // 压缩css
     ],
     usedExports: true,
-    sideEffects: true
+    sideEffects: true,
+    runtimeChunk: {
+      name: "runtime"
+    },
+    splitChunks: {
+      cacheGroups: {
+        react: {
+          test: /[\\/]node_modules[\\/]_?(react|react-dom|scheduler|prop-types|react-router|react-router-dom|redux|react-redux|redux-thunk)/,
+          name: 'react',
+          chunks: 'all',
+          priority: 10
+        },
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+          priority: 1
+        }
+      }
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.template.html',
-      title: projectConfig.title
+      title: projectConfig.title,
+      inlineSource: "manifest.js$",
+      favicon: './src/favicon.ico',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "404.html",
+      template: './src/404.html',
+      title: projectConfig.title,
+      favicon: './src/favicon.ico',
+      inject: false,
+      minify: true
     }),
     new CleanWebpackPlugin('dist'),
     new MiniCssExtractPlugin({

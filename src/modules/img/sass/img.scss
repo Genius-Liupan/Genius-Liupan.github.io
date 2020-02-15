@@ -1,0 +1,46 @@
+@import "~@/assets/scss/animation";
+
+$prefix: "wtdc-img" !default;
+
+.#{$prefix} {
+  position: relative;
+  img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    animation: fadeIn .3s forwards;
+  }
+
+  &-cover img {
+    object-fit: cover;
+  }
+  &-fill img {
+    object-fit: fill;
+  }
+  &-contain img {
+    object-fit: contain;
+  }
+
+  &-visible {
+    img {
+      display: block;
+    }
+  }
+
+  &-aspect {
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &-transparent-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+  }
+}

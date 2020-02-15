@@ -7,10 +7,12 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import FadeVisibilitySensor from '@/components/FadeVisibilitySensor';
-import design_pc_png from '@/assets/images/home/design_pc.png';
-import design_mobile_png from '@/assets/images/home/design_mobile.png';
+import Img from '@/components/Img';
+import Link from '@/components/Link';
+import { HOME_DESIGN_PC, HOME_DESIGN_MOBILE } from "@/constants/static";
 
 import './DesignStandard.scss';
+import PAGE from "@/constants/page";
 
 export default function DesignStandard() {
   const [device, setDevice] = useState(DEVICE.PC);
@@ -25,25 +27,34 @@ export default function DesignStandard() {
       <div
         className={classNames("design-standard-pc pos-abs cursor-pointer text-center", { active: device === DEVICE.PC })}
       >
-        <img
+        <Img
           className="design-standard-pc-image"
-          src={design_pc_png}
+          src={HOME_DESIGN_PC}
           onClick={() => setDevice(DEVICE.PC)}
-          alt=""
+          lazy={false}
         />
-        <span className="design-standard-preview-btn fade-in text-white">预览PC端</span>
+        <Link to={PAGE.STANDARD_PC}>
+          <span
+            className="design-standard-preview-btn fade-in text-white"
+          >
+            预览PC端
+          </span>
+        </Link>
+
       </div>
 
       <div
         className={classNames("design-standard-mobile pos-abs cursor-pointer text-center", { active: device === DEVICE.MOBILE })}
       >
-        <img
+        <Img
           className="design-standard-mobile-image"
-          src={design_mobile_png}
+          src={HOME_DESIGN_MOBILE}
           onClick={() => setDevice(DEVICE.MOBILE)}
-          alt=""
+          lazy={false}
         />
-        <span className="design-standard-preview-btn fade-in text-white">预览移动端</span>
+        <Link to={PAGE.STANDARD_MOBILE}>
+          <span className="design-standard-preview-btn fade-in text-white">预览移动端</span>
+        </Link>
       </div>
     </div>
   )

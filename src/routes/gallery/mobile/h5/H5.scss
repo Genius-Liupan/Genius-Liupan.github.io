@@ -1,0 +1,13 @@
+@import "~@/assets/scss/function";
+
+.H5 {
+  .wtdc-img {
+    width: 30%;
+    margin-right: 5%;
+    border-radius: 30px;
+
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
+}

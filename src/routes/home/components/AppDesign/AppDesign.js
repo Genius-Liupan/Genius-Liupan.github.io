@@ -6,7 +6,10 @@
 import React from 'react';
 
 import FadeVisibilitySensor from '@/components/FadeVisibilitySensor';
-import design_app_png from '@/assets/images/home/design_app.png';
+import Img from '@/components/Img';
+import Link from '@/components/Link';
+import { HOME_DESIGN_APP } from "@/constants/static";
+import PAGE from "@/constants/page";
 
 import './AppDesign.scss';
 
@@ -18,7 +21,14 @@ export default function AppDesign() {
       </FadeVisibilitySensor>
       <FadeVisibilitySensor>
         <div>
-          <img src={design_app_png} alt=""/>
+          <Link to={PAGE.APP}>
+            <Img
+              display="block"
+              src={HOME_DESIGN_APP}
+              aspect={1.29}
+              lazy={false}
+            />
+          </Link>
         </div>
       </FadeVisibilitySensor>
     </div>

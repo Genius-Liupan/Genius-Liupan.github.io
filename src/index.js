@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 const app = new App();
 
 app
-  .setModels([])
+  // .setModels([])
   .setRoutes(routes)
   .render(document.getElementById('root'));
 

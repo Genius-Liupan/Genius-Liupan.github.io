@@ -8,7 +8,8 @@
 import React from 'react';
 
 import FadeVisibilitySensor from '@/components/FadeVisibilitySensor';
-import analysis_pie_png from "@/assets/images/home/analysis_pie.png";
+import Img from '@/components/Img';
+import { HOME_PROJECT_ANALYSIS } from "@/constants/static";
 
 import './ProjectAnalysis.scss';
 
@@ -23,7 +24,7 @@ class ProjectAnalysis extends React.PureComponent {
         <FadeVisibilitySensor>
           <div>
             <div className="analysis-pie-container pos-rel">
-              <img src={analysis_pie_png} alt=""/>
+              <Img src={HOME_PROJECT_ANALYSIS} aspect={0.75}/>
             </div>
           </div>
         </FadeVisibilitySensor>
