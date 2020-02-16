@@ -15,6 +15,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   mode: 'production',
   module: {
@@ -41,6 +42,12 @@ module.exports = {
               plugins: [
                 require("autoprefixer")({
                   browsers: ["last 10 versions", "not ie < 8"]
+                }),
+                require("postcss-pxtorem")({
+                  rootValue: 100,
+                  unitPrecision: 5,
+                  minPixelValue: 12,
+                  propList: ['*']
                 })
               ]
             }
