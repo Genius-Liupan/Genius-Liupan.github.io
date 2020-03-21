@@ -4,16 +4,28 @@
   padding: 80px 0 120px;
   background-color: #f5f7ff;
 
+  @include phone {
+    padding: 80px 0 100px;
+  }
+
   .project-analysis-title {
     margin-bottom: 60px;
     font-size: 45px;
     color: #606c93;
+
+    @include phone {
+      margin-bottom: 40px;
+    }
   }
 
   .analysis-pie-container {
     width: 25%;
     margin: auto;
     transform: translateX(5%);
+
+    @include phone {
+      width: 40%;
+    }
   }
 
   .wtdc-img {

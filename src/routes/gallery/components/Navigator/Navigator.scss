@@ -1,0 +1,83 @@
+@import "~@/assets/scss/function";
+
+.GalleryNavigator {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+
+  .gallery-route {
+    position: relative;
+    width: 23%;
+    line-height: 60px;
+    user-select: none;
+
+    &_title {
+      opacity: .6;
+      background-color: $primary-color;
+      letter-spacing: 1px;
+
+      .ic {
+        font-size: 12px;
+        transform: translateX(8px) rotate(90deg);
+        transition: transform .3s;
+
+        @include phone {
+          transform: translateX(2px) rotate(90deg);
+        }
+      }
+
+      &:hover {
+        opacity: .8;
+        .ic {
+          transform: translateX(8px) rotate(-90deg);
+
+          @include phone {
+            transform: translateX(2px) rotate(-90deg);
+          }
+        }
+      }
+    }
+
+    &_children {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      transform: scaleY(0);
+      opacity: 0;
+      box-shadow: 0 2px 6px 0 rgba(black, .1);
+      background-color: white;
+      transition: transform .2s cubic-bezier(.32,.88,.37,.94);
+      transform-origin: top center;
+
+      &-item {
+        color: #606c93;
+
+        &_title {
+          display: block;
+          margin: auto;
+          max-width: 90px;
+          white-space: nowrap;
+        }
+
+        &:hover {
+          color: $primary-color;
+        }
+        &.active {
+          color: $primary-color;
+          background-color: rgba($primary-color, .1);
+        }
+      }
+    }
+
+    &:hover .gallery-route_children {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    &.active .gallery-route_title {
+      opacity: 1;
+    }
+  }
+}

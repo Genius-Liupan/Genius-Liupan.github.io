@@ -5,6 +5,8 @@
  */
 import React from 'react';
 
+import Navigator from './components/Navigator';
+
 import './GalleryHome.scss';
 
 class GalleryHome extends React.PureComponent {
@@ -12,6 +14,7 @@ class GalleryHome extends React.PureComponent {
     return (
       <div className="GalleryHome">
         <div className="website-center-container">
+          <Navigator />
           {this.props.children}
         </div>
       </div>
