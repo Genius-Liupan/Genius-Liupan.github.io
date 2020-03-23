@@ -16,6 +16,10 @@
       background-color: $primary-color;
       letter-spacing: 1px;
 
+      @include phone {
+        font-size: 16px;
+      }
+
       .ic {
         font-size: 12px;
         transform: translateX(8px) rotate(90deg);

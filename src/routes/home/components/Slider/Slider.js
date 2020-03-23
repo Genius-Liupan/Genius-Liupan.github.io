@@ -162,7 +162,7 @@ class Slider extends React.PureComponent {
               className="slider-content_pagination-rotate cursor-pointer"
               onClick={this.handleRotateClick}
             >
-              <i className="ic ic-right" />
+              <i className="ic ic-right f16" />
               <svg
                 viewBox="0 0 100 100"
                 key={paginationIndex}

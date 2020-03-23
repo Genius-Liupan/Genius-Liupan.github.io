@@ -18,7 +18,7 @@ export const HOME_CATEGORY_ICON_IP = 'https://file.5rs.me/oss/uploadfe/jpg/e6817
 // 首页 - 设计分类 - 内容 - 产品设计
 export const HOME_CATEGORY_CONTENT_PRODUCT = 'https://file.5rs.me/oss/uploadfe/jpg/df0484f5878a2dc1fa5482fa436bdeca.jpg';
 // 首页 - 设计分类 - 内容 - 插画设计
-export const HOME_CATEGORY_CONTENT_INBETWEENING = 'https://file.5rs.me/oss/uploadfe/jpg/8a5f053c5624f49ce6715b7dfa604fcc.jpg';
+export const HOME_CATEGORY_CONTENT_INBETWEENING = 'https://file.5rs.me/oss/uploadfe/jpg/248f77e5b83fa793a7811bc515f740b6.jpg';
 // 首页 - 设计分类 - 内容 - IP设计
 export const HOME_CATEGORY_CONTENT_IP = 'https://file.5rs.me/oss/uploadfe/jpg/4a3acf3a49e2ee17aa1eaa239f04bd93.jpg';
 

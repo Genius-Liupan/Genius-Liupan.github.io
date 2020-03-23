@@ -2,7 +2,7 @@
 
 .DesignStandard {
   height: 820px;
-  background: url("https://file.5rs.me/oss/uploadfe/png/9df35e835f6837342d784c0e87bd1ed5.png") #6067f2 repeat;
+  background: url("https://file.5rs.me/oss/uploadfe/png/17b1a12d53e3e100689c980f8274fcc2.png") #6067f2 repeat;
   background-size: 4%;
 
   @include phone {
@@ -79,6 +79,10 @@
       transition: all .3s;
       transform: scale(0);
       white-space: nowrap;
+
+      @include phone {
+        padding: 4px 20px;
+      }
 
       &:hover {
         background-color: rgba(white, 0.25);

@@ -29,6 +29,10 @@
       top: 25%;
       left: 10%;
       font-size: 50px;
+
+      @include phone {
+        font-size: 40px;
+      }
     }
 
     &_desc {
@@ -38,6 +42,11 @@
       font-size: 20px;
       letter-spacing: 1px;
       white-space: pre-wrap;
+      text-align: justify;
+
+      @include phone {
+        width: 45%;
+      }
     }
   }
 
