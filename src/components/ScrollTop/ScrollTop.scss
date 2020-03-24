@@ -1,0 +1,20 @@
+@import "~@/assets/scss/function";
+
+.ScrollTop {
+  position: fixed;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba($secondary-color, .3);
+  opacity: 0;
+
+  &:hover {
+    background-color: rgba($secondary-color, .5);
+  }
+
+  .ic {
+    display: block;
+    line-height: 1;
+    transform: rotate(-90deg);
+  }
+}

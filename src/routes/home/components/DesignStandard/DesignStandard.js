@@ -36,33 +36,48 @@ export default function DesignStandard(props) {
       </FadeVisibilitySensor>
 
       <div
-        className="design-standard-pc cursor-pointer text-center inline-block"
-        onClick={() => handleClick(DEVICE.PC)}
+        className="design-standard-pc text-center"
       >
-        <Img
-          display="block"
-          className="design-standard-pc-image"
-          src={HOME_DESIGN_PC}
-          lazy={false}
-        />
-        <span
-          className="design-standard-preview-btn text-white"
-        >
-          预览PC端
-        </span>
+          <div
+            className="design-standard-pc-image-wrap"
+            onClick={() => handleClick(DEVICE.PC)}
+          >
+            <Img
+              display="block"
+              className="design-standard-pc-image cursor-pointer"
+              src={HOME_DESIGN_PC}
+              lazy={false}
+            />
+          </div>
+
+          <span
+            className="design-standard-preview-btn text-white cursor-pointer"
+            onClick={() => handleClick(DEVICE.PC)}
+          >
+            PC端规范
+          </span>
       </div>
 
       <div
-        className="design-standard-mobile cursor-pointer text-center inline-block"
-        onClick={() => handleClick(DEVICE.MOBILE)}
+        className="design-standard-mobile text-center"
       >
-        <Img
-          display="block"
-          className="design-standard-mobile-image"
-          src={HOME_DESIGN_MOBILE}
-          lazy={false}
-        />
-        <span className="design-standard-preview-btn text-white">预览移动端</span>
+        <div
+          className="design-standard-mobile-image-wrap"
+          onClick={() => handleClick(DEVICE.MOBILE)}
+        >
+          <Img
+            display="block"
+            className="design-standard-mobile-image cursor-pointer"
+            src={HOME_DESIGN_MOBILE}
+            lazy={false}
+          />
+        </div>
+
+        <span
+          className="design-standard-preview-btn text-white cursor-pointer"
+        >
+          移动端规范
+        </span>
       </div>
     </div>
   )

@@ -26,7 +26,7 @@ export default function Header() {
     let headerHeight = 0;
 
     function handleScroll() {
-      const scrollY = window.scrollY;
+      const scrollY = window.scrollY || window.pageYOffset;
       if(!lastScrollY) {
         lastScrollY = scrollY;
         headerHeight = headerRef.current.clientHeight;
@@ -58,6 +58,7 @@ export default function Header() {
     }
   }, []);
 
+  // 复制邮箱
   useEffect(() => {
     const clipboard = new Clipboard('#emailCopyBtn');
 
@@ -66,7 +67,6 @@ export default function Header() {
         content: '邮箱地址已复制到剪贴板',
         icon: <i className="ic ic-round-fill-success mr5 text-primary" />
       });
-      console.log(Message)
     });
 
     return () => {
@@ -83,20 +83,22 @@ export default function Header() {
       }}
     >
       <div className="dashboard-header-container">
-        <Link className="flex1" to={PAGE.HOME}>
+        <div className="flex1">
+          <Link to={PAGE.HOME}>
           <span className="header-title">
             <i className="ic ic-logo mr10" />
             Panda个人网站
           </span>
-        </Link>
+          </Link>
+        </div>
 
         <span
           id="emailCopyBtn"
-          className="contact-me cursor-pointer f18"
+          className="contact-me cursor-pointer f16"
           title="点击复制邮箱"
           data-clipboard-text="panda583457602@gmail.com"
         >
-          <i className="ic ic-email f16 mr5" />
+          <i className="ic ic-email f14" />
           联系邮箱
         </span>
       </div>

@@ -9,17 +9,17 @@ $borderBoxSwitch: true !default; // true为*{box-sizing:border-box;}
 $font-size: 14px !default;
 $pad-font-size: 12px !default;
 $font-line-height: 1.5 !default;
-$font-family: Arial, "Times New Roman", "Microsoft YaHei", SimHei !default;
+$font-family: PingFangSC, "Microsoft Yahei", Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", STXihei, STHeiti, Heiti, SimSun, sans-serif !default;
 
 // color
 $primary-color: #6067f2 !default; // 主色
-$secondary-color: #ff6b6b !default; // 辅色
+$secondary-color: #606c93 !default; // 辅色
 $contrast-color: #19bfbd !default; // 对比色
 $warning-color: #f30 !default; // 警示颜色
 $info-color: #598ae3 !default; // 蓝色
 $tips-color: #c5a621 !default; //提示颜色
 $link-color: #666 $primary-color !default; // 如果只有一个值则滑过的值为这个值的darken 5%，如果有两个值则第二个值为滑过的值
-$bg-color: #fff !default;
+$bg-color: #f5f7ff !default;
 $placeholder-color: #999 !default;
 $white: white !default;
 $black: black !default;

@@ -40,17 +40,25 @@ const RAYS_DATA = {
       itemProps: {
         aspect: 2.165
       },
-      extra: () => (
-        <a
-          className="block text-center" href={GALLERY_MOBILE_APP_BASE_DETAIL}
-          target="_blank"
-          style={{
-            margin: '.5rem auto',
-          }}
-        >
-          <span className="btn btn-primary">查看完整展示图，效果更佳</span>
-        </a>
-      )
+      // extra: () => (
+      //   <a
+      //     className="block text-center" href={GALLERY_MOBILE_APP_BASE_DETAIL}
+      //     target="_blank"
+      //     style={{
+      //       margin: '.5rem auto 1rem'
+      //     }}
+      //   >
+      //     <span
+      //       className="btn btn-primary f16"
+      //       style={{
+      //         padding: ".12rem .3rem",
+      //         borderRadius: 0
+      //       }}
+      //     >
+      //       查看完整展示图，效果更佳
+      //     </span>
+      //   </a>
+      // )
     },
     {
       title: '读者APP',

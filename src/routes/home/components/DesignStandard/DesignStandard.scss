@@ -1,7 +1,7 @@
 @import "~@/assets/scss/function";
 
 .DesignStandard {
-  padding: 180px 0 50px;
+  padding: 180px 0 80px;
   background: url("https://file.5rs.me/oss/uploadfe/png/17b1a12d53e3e100689c980f8274fcc2.png") #6067f2 repeat;
   background-size: 4%;
 
@@ -17,6 +17,7 @@
       padding: 0 25px;
       margin: auto;
       border: solid 1px white;
+      font-family: PingFangSC-Semibold, "Microsoft Yahei", sans-serif;
 
       &-dot {
         position: absolute;
@@ -69,10 +70,9 @@
 
     &-preview-btn {
       display: inline-block;
-      margin-top: 50px;
+      margin-top: 30px;
       padding: 5px 35px;
       background-color: transparent;
-      border-radius: 70px;
       border: solid 1px white;
       white-space: nowrap;
 
@@ -82,12 +82,22 @@
       }
 
       &:hover {
-        background-color: rgba(white, 0.25);
+        background-color: rgba(white, 0.1);
       }
     }
 
     &-pc, &-mobile {
+      display: inline-block;
+      vertical-align: baseline;
       width: 50%;
+
+      &-image {
+        transition: transform .4s cubic-bezier(.32,.88,.37,.94);
+
+        &:hover {
+          transform: scale(1.05) translateY(-5px);
+        }
+      }
 
       @include phone {
         width: 100%;
@@ -95,13 +105,17 @@
     }
 
     &-pc {
+      @include not-phone {
+        transform: translateX(5%);
+      }
+
       @include phone {
         margin: 30px 0 50px;
       }
     }
 
-    &-pc .wtdc-img {
-      width: 50%;
+    &-pc-image-wrap {
+      width: 65%;
       margin: auto;
 
       @include phone {
@@ -109,8 +123,14 @@
       }
     }
 
-    &-mobile .wtdc-img {
-      width: 40%;
+    &-mobile {
+      @include not-phone {
+        transform: translateX(-5%);
+      }
+    }
+
+    &-mobile-image-wrap {
+      width: 35%;
       margin: auto;
     }
   }

@@ -23,9 +23,9 @@ export const HOME_CATEGORY_CONTENT_INBETWEENING = 'https://file.5rs.me/oss/uploa
 export const HOME_CATEGORY_CONTENT_IP = 'https://file.5rs.me/oss/uploadfe/jpg/4a3acf3a49e2ee17aa1eaa239f04bd93.jpg';
 
 // 首页 - 设计规范 - PC
-export const HOME_DESIGN_PC = 'https://file.5rs.me/oss/uploadfe/png/08e03209b75e74bbc64e12264655ee56.png';
+export const HOME_DESIGN_PC = 'https://file.5rs.me/oss/uploadfe/png/8aef3ef5c421b8b89d4b4f800f8a9647.png';
 // 首页 - 设计规范 - 手机
-export const HOME_DESIGN_MOBILE = 'https://file.5rs.me/oss/uploadfe/png/6a59a5b5b648e7d8688784975496cc96.png';
+export const HOME_DESIGN_MOBILE = 'https://file.5rs.me/oss/uploadfe/png/34d427973d343d5aabd741fece8e54b1.png';
 // 首页 - APP设计
 export const HOME_DESIGN_APP = 'https://file.5rs.me/oss/uploadfe/png/cb2f07f14ae87602916175fb639e89b0.png';
 // 首页 - 项目分析

@@ -1,5 +1,11 @@
 @import "~@/assets/scss/function";
 
-.Message {
+.ant-message {
+  top: 40vh;
 
+  &-notice-content {
+    padding: 20px 50px;
+    border-radius: 0;
+    color: #333;
+  }
 }

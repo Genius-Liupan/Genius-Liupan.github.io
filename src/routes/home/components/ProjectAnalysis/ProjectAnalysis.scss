@@ -2,7 +2,7 @@
 
 .ProjectAnalysis {
   padding: 80px 0 120px;
-  background-color: #f5f7ff;
+  background-color: $bg-color;
 
   @include phone {
     padding: 80px 0 100px;
@@ -11,7 +11,7 @@
   .project-analysis-title {
     margin-bottom: 60px;
     font-size: 45px;
-    color: #606c93;
+    color: $secondary-color;
 
     @include phone {
       margin-bottom: 40px;

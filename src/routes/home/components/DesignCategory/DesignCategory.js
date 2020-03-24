@@ -9,6 +9,7 @@ import classNames from 'classnames';
 
 import FadeVisibilitySensor from '@/components/FadeVisibilitySensor';
 import Img from '@/components/Img';
+import Link from '@/components/Link';
 import { HOME_CATEGORY_ICON_PRODUCT, HOME_CATEGORY_ICON_INBETWEENING, HOME_CATEGORY_ICON_IP, HOME_CATEGORY_CONTENT_PRODUCT, HOME_CATEGORY_CONTENT_INBETWEENING, HOME_CATEGORY_CONTENT_IP } from "@/constants/static";
 import PAGE from "@/constants/page";
 
@@ -41,11 +42,13 @@ export default function DesignCategory(props) {
                       }}
                       key={categoryIndex}
                     >
-                      <Img
-                        src={category.image}
-                        className="design-category-slider-image"
-                        intervalCheck
-                      />
+                      <Link to={category.link}>
+                        <Img
+                          src={category.image}
+                          className="design-category-slider-image"
+                          intervalCheck
+                        />
+                      </Link>
                     </li>
                   )
                 })

@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import ScrollTop from "@/components/ScrollTop";
 
 import Home from './home/Home';
 
@@ -16,6 +17,7 @@ function App(props) {
       {children}
       {isExact && <Home {...rest} />}
       <Footer />
+      <ScrollTop />
     </div>
   );
 }
