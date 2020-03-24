@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import Clipboard from 'clipboard';
 
 import Link from '@/components/Link';
+import Message from '@/components/Message';
 import PAGE from "@/constants/page";
 
 import './Header.scss';
@@ -61,7 +62,11 @@ export default function Header() {
     const clipboard = new Clipboard('#emailCopyBtn');
 
     clipboard.on('success', function() {
-      alert('既然你已经复制了邮箱，那就快来联系我吧~')
+      Message.success({
+        content: '邮箱地址已复制到剪贴板',
+        icon: <i className="ic ic-round-fill-success mr5 text-primary" />
+      });
+      console.log(Message)
     });
 
     return () => {
@@ -87,11 +92,12 @@ export default function Header() {
 
         <span
           id="emailCopyBtn"
-          className="contact-me text-primary cursor-pointer f16"
+          className="contact-me cursor-pointer f18"
           title="点击复制邮箱"
           data-clipboard-text="panda583457602@gmail.com"
         >
-          CONTACT ME
+          <i className="ic ic-email f16 mr5" />
+          联系邮箱
         </span>
       </div>
     </div>

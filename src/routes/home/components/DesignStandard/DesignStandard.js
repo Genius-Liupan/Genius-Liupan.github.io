@@ -15,13 +15,9 @@ import './DesignStandard.scss';
 
 export default function DesignStandard(props) {
   const { history } = props;
-  const [device, setDevice] = useState(DEVICE.PC);
 
-  function handleClick(event, nextDevice) {
-    if(nextDevice === device) {
-      history.push(DEVICE_LINK[device]);
-      event.preventDefault();
-    }
+  function handleClick(device) {
+    history.push(DEVICE_LINK[device]);
   }
 
   return (
@@ -40,11 +36,11 @@ export default function DesignStandard(props) {
       </FadeVisibilitySensor>
 
       <div
-        className={classNames("design-standard-pc pos-abs cursor-pointer text-center", { active: device === DEVICE.PC })}
-        onMouseEnter={() => setDevice(DEVICE.PC)}
-        onClick={(event) => handleClick(event, DEVICE.PC)}
+        className="design-standard-pc cursor-pointer text-center inline-block"
+        onClick={() => handleClick(DEVICE.PC)}
       >
         <Img
+          display="block"
           className="design-standard-pc-image"
           src={HOME_DESIGN_PC}
           lazy={false}
@@ -57,11 +53,11 @@ export default function DesignStandard(props) {
       </div>
 
       <div
-        className={classNames("design-standard-mobile pos-abs cursor-pointer text-center", { active: device === DEVICE.MOBILE })}
-        onMouseEnter={() => setDevice(DEVICE.MOBILE)}
-        onClick={(event) => handleClick(event, DEVICE.MOBILE)}
+        className="design-standard-mobile cursor-pointer text-center inline-block"
+        onClick={() => handleClick(DEVICE.MOBILE)}
       >
         <Img
+          display="block"
           className="design-standard-mobile-image"
           src={HOME_DESIGN_MOBILE}
           lazy={false}

@@ -9,7 +9,8 @@ import Gallery from '@/routes/gallery/components/Gallery';
 import {
   GALLERY_MOBILE_APP_BASE,
   GALLERY_MOBILE_APP_READER,
-  GALLERY_MOBILE_APP_EDITOR
+  GALLERY_MOBILE_APP_EDITOR,
+  GALLERY_MOBILE_APP_BASE_DETAIL
 } from "@/constants/static";
 
 import './APP.scss';
@@ -38,7 +39,18 @@ const RAYS_DATA = {
       pictureList: GALLERY_MOBILE_APP_BASE,
       itemProps: {
         aspect: 2.165
-      }
+      },
+      extra: () => (
+        <a
+          className="block text-center" href={GALLERY_MOBILE_APP_BASE_DETAIL}
+          target="_blank"
+          style={{
+            margin: '.5rem auto',
+          }}
+        >
+          <span className="btn btn-primary">查看完整展示图，效果更佳</span>
+        </a>
+      )
     },
     {
       title: '读者APP',

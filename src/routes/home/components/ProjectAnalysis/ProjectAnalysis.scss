@@ -19,13 +19,9 @@
   }
 
   .analysis-pie-container {
-    width: 25%;
+    @include responsive(width, 25%, 30%, 40%, 70%);
     margin: auto;
     transform: translateX(5%);
-
-    @include phone {
-      width: 40%;
-    }
   }
 
   .wtdc-img {

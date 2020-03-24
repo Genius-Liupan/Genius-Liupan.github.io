@@ -8,7 +8,7 @@
     color: #606c93;
   }
   .wtdc-img {
-    width: 40%;
+    @include responsive(width, 40%, 50%, 55%, 60%);
     margin: auto;
     max-width: 780px;
     transform: translateX(8%);

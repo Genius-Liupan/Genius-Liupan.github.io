@@ -34,7 +34,7 @@ export const HOME_PROJECT_ANALYSIS = 'https://file.5rs.me/oss/uploadfe/png/be7e2
 // 画廊 - PC - RAYS - 编辑 - 登陆
 export const GALLERY_PC_RAYS_ADVISER_LOGIN = 'https://file.5rs.me/oss/uploadfe/jpg/a7f4520beb581c167213acf1b5de19f2.jpg';
 // 画廊 - PC - RAYS - 编辑 - 首页
-export const GALLERY_PC_RAYS_ADVISER_HOME = 'https://file.5rs.me/oss/uploadfe/jpg/1b4c65258f829654dd28802f834e4f43.jpg';
+export const GALLERY_PC_RAYS_ADVISER_HOME = 'https://file.5rs.me/oss/uploadfe/jpg/12236d78f9b99661cbbc7e128c9831de.jpg';
 // 画廊 - PC - RAYS - 编辑 - 应用
 export const GALLERY_PC_RAYS_ADVISER_APP = 'https://file.5rs.me/oss/uploadfe/jpg/849c5596a6df4c4a16ce6346899f4c7e.jpg';
 // 画廊 - PC - RAYS - 作者 - 首页
@@ -129,6 +129,7 @@ export const GALLERY_MOBILE_APP_BASE = [
   'https://file.5rs.me/oss/uploadfe/jpg/6699325f487f8b0a96843e23cd49d7cb.jpg',
   'https://file.5rs.me/oss/uploadfe/jpg/b4ad9abd9ed7365b34213128809a82e3.jpg',
 ];
+export const GALLERY_MOBILE_APP_BASE_DETAIL = 'https://file.5rs.me/oss/uploadfe/png/be05fbe6eb2717a213e2d37f0f8a6f5b.png';
 // 画廊 - 移动端 - APP - 读者APP
 export const GALLERY_MOBILE_APP_READER = [
   'https://file.5rs.me/oss/uploadfe/jpg/1151c41dc2c13906671e2245eeb99484.jpg',

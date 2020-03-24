@@ -1,6 +1,7 @@
 /**
  * Created by CastileMan on 2018/12/15.
  */
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -19,6 +20,7 @@ module.exports = merge.smart(webpackConfig, {
       new UglifyJsPlugin(),       // 压缩js
       new OptimizeCSSAssetsPlugin({})   // 压缩css
     ],
+    moduleIds: 'hashed',
     usedExports: true,
     sideEffects: true,
     runtimeChunk: {

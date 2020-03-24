@@ -17,7 +17,8 @@ class ImgContainer extends React.PureComponent {
     offset: 0,
     optimizeType: 'debounce',
     showOnceVisible: true,
-    partialVisibility: true
+    partialVisibility: true,
+    intervalCheck: true
   };
 
   constructor(props) {

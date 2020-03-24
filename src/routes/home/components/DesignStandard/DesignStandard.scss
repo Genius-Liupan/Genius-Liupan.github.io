@@ -1,20 +1,19 @@
 @import "~@/assets/scss/function";
 
 .DesignStandard {
-  height: 820px;
+  padding: 180px 0 50px;
   background: url("https://file.5rs.me/oss/uploadfe/png/17b1a12d53e3e100689c980f8274fcc2.png") #6067f2 repeat;
   background-size: 4%;
 
   @include phone {
-    height: 620px;
+    background-size: 10%;
   }
 
   .design-standard {
     &-title {
-      position: relative;
-      top: 70px;
+      top: -110px;
       @include center-translate(x);
-      @include responsive(font-size, 45px, 45px, 40px, 30px);
+      font-size: 45px;
       padding: 0 25px;
       margin: auto;
       border: solid 1px white;
@@ -72,16 +71,14 @@
       display: inline-block;
       margin-top: 50px;
       padding: 5px 35px;
-      background-color: rgba(white, 0.1);
+      background-color: transparent;
       border-radius: 70px;
       border: solid 1px white;
-      opacity: 0;
-      transition: all .3s;
-      transform: scale(0);
       white-space: nowrap;
 
       @include phone {
-        padding: 4px 20px;
+        padding: 4px 60px;
+        font-size: 20px;
       }
 
       &:hover {
@@ -89,51 +86,32 @@
       }
     }
 
-    &-pc {
-      transition: all .8s;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      width: 40vw;
-      max-width: 500px;
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-
-      &:not(.active) {
-        opacity: .75;
-        transform: translate(-130%, -50%) scale(.7);
-      }
-      &-image {
-        width: 100%;
-      }
-    }
-
-    &-mobile {
-      transition: all .8s;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      width: 20vw;
-      max-width: 230px;
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-
-      &:not(.active) {
-        opacity: .75;
-        transform: translate(120%, -50%) scale(.7);
-      }
-      &-image {
-        width: 100%;
-      }
-    }
-
     &-pc, &-mobile {
-      &.active {
-        .design-standard-preview-btn {
-          opacity: 1;
-          transform: scale(1);
-        }
+      width: 50%;
+
+      @include phone {
+        width: 100%;
       }
+    }
+
+    &-pc {
+      @include phone {
+        margin: 30px 0 50px;
+      }
+    }
+
+    &-pc .wtdc-img {
+      width: 50%;
+      margin: auto;
+
+      @include phone {
+        width: 70%;
+      }
+    }
+
+    &-mobile .wtdc-img {
+      width: 40%;
+      margin: auto;
     }
   }
 }

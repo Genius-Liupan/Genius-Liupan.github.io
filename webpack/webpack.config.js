@@ -7,7 +7,7 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].[contenthash].js',
     path: webpackUtils.resolve('dist'),
     publicPath: '/'
   },

@@ -37,5 +37,10 @@
 
   .contact-me {
     padding-right: 10px;
+    color: #606C93;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 }

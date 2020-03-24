@@ -40,7 +40,7 @@ class Gallery extends React.PureComponent {
 
         {
           content.map((contentItem, index) => {
-            const { title, pictureList = [], itemProps: contentItemProps = {} } = contentItem;
+            const { title, pictureList = [], itemProps: contentItemProps = {}, extra } = contentItem;
             let imgProps = Object.assign({}, itemProps, contentItemProps);
             return (
               <React.Fragment key={index}>
@@ -70,6 +70,15 @@ class Gallery extends React.PureComponent {
                       })
                     }
                   </div>
+                }
+
+                {
+                  extra && (
+                    typeof extra === 'function' ?
+                      extra()
+                      :
+                      extra
+                  )
                 }
               </React.Fragment>
             )
