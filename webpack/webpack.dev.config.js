@@ -4,11 +4,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const webpackConfig = require('./webpack.config');
 const projectConfig = require('../project.config');
 const webpackUtils = require('./webpack-utils');
+const LottieLoadingPlugin = require('./plugins/lottie-loading-plugin');
 
 module.exports = merge.smart(webpackConfig, {
   mode: 'development',
@@ -16,7 +16,7 @@ module.exports = merge.smart(webpackConfig, {
   module: {
     rules: [
       {
-        test: /\.js|.ts$/,
+        test: /(\.js?|jsx?)$/,
         exclude: /(node_modules)/,
         use: ['babel-loader', 'react-hot-loader/webpack']
       }
@@ -43,5 +43,6 @@ module.exports = merge.smart(webpackConfig, {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new LottieLoadingPlugin(projectConfig.lottie)
   ],
 });

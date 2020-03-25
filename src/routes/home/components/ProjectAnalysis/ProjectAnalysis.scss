@@ -10,8 +10,9 @@
 
   .project-analysis-title {
     margin-bottom: 60px;
-    font-size: 45px;
     color: $secondary-color;
+    font-size: 45px;
+    font-family: $title-font-family;
 
     @include phone {
       margin-bottom: 40px;

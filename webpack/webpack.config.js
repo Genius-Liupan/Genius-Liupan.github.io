@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const webpackUtils = require('./webpack-utils');
 
@@ -7,19 +8,20 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].[hash].js',
     path: webpackUtils.resolve('dist'),
     publicPath: '/'
   },
   module: {
     rules: [
       {
-        test: /\.js|.ts$/,
+        test: /(\.js?|jsx?)$/,
         exclude: /(node_modules)/,
         use: ['babel-loader']
       },
       {
         test: /\.scss$/,
+        // todo: 根据环境加载loader
         use: [
           "style-loader", // 将 JS 字符串生成为 style 节点
           "css-loader", // 将 CSS 转化成 CommonJS 模块

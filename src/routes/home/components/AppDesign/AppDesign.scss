@@ -3,10 +3,12 @@
 .AppDesign {
   padding-top: 80px;
   background-color: white;
+
   .app-design-title {
     margin-bottom: 50px;
     font-size: 45px;
     color: $secondary-color;
+    font-family: $title-font-family;
   }
   .wtdc-img {
     @include responsive(width, 40%, 50%, 55%, 60%);

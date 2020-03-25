@@ -3,8 +3,7 @@
  *  Author  : CastileMan
  *  Declare : AppDesign
  */
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React from 'react';
 
 import FadeVisibilitySensor from '@/components/FadeVisibilitySensor';
 import Img from '@/components/Img';

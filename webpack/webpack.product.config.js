@@ -1,7 +1,6 @@
 /**
  * Created by CastileMan on 2018/12/15.
  */
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -12,6 +11,7 @@ const merge = require('webpack-merge');
 const webpackConfig = require('./webpack.config');
 const projectConfig = require('../project.config');
 const webpackUtils = require('./webpack-utils');
+const LottieLoadingPlugin = require('./plugins/lottie-loading-plugin');
 
 module.exports = merge.smart(webpackConfig, {
   mode: 'production',
@@ -63,6 +63,7 @@ module.exports = merge.smart(webpackConfig, {
       // both options are optional
       filename: "[name].[hash].css",
       chunkFilename: "[id].[hash].css"
-    })
+    }),
+    new LottieLoadingPlugin(projectConfig.lottie)
   ],
 });

@@ -29,6 +29,7 @@
       top: 25%;
       left: 10%;
       font-size: 50px;
+      font-family: $title-font-family;
 
       @include phone {
         font-size: 40px;

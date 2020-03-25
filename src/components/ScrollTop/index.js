@@ -52,5 +52,5 @@ function checkIsVisible() {
 }
 
 function checkIsBottom() {
-  return (window.pageYOffset || window.scrollY) > (document.documentElement.scrollHeight || document.body.scrollHeight) - 800;
+  return (window.pageYOffset || window.scrollY) > (document.documentElement.scrollHeight || document.body.scrollHeight) - 1000;
 }

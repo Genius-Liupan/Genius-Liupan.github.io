@@ -13,11 +13,11 @@
     &-title {
       top: -110px;
       @include center-translate(x);
-      font-size: 45px;
       padding: 0 25px;
       margin: auto;
       border: solid 1px white;
-      font-family: PingFangSC-Semibold, "Microsoft Yahei", sans-serif;
+      font-size: 45px;
+      font-family: $title-font-family;
 
       &-dot {
         position: absolute;
@@ -95,7 +95,7 @@
         transition: transform .4s cubic-bezier(.32,.88,.37,.94);
 
         &:hover {
-          transform: scale(1.05) translateY(-5px);
+          transform: scale(1.02) translateY(-5px);
         }
       }
 
@@ -130,7 +130,7 @@
     }
 
     &-mobile-image-wrap {
-      width: 35%;
+      width: 40%;
       margin: auto;
     }
   }
