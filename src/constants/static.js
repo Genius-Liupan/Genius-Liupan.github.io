@@ -63,13 +63,13 @@ export const GALLERY_PC_ERP_HOME = 'https://file.5rs.me/oss/uploadfe/jpg/d958903
 export const GALLERY_PC_ERP_PROJECT = 'https://file.5rs.me/oss/uploadfe/jpg/214b4acae9aa1f8dae2f5e06ba600bf0.jpg';
 
 // 画廊 - PC - 编辑器
-export const GALLERY_PC_EDITOR = 'https://file.5rs.me/oss/uploadfe/jpg/fa339eafe41c3c0631eb0d893cfaa66c.jpg';
+export const GALLERY_PC_EDITOR = 'https://file.5rs.me/oss/uploadfe/jpg/86533799ab138f0cf4a1ea6c1599b20c.jpg';
 // 画廊 - PC - 编辑器 - 超链接
-export const GALLERY_PC_EDITOR_LINK = 'https://file.5rs.me/oss/uploadfe/jpg/0dc38e928c50c0585a75ffbc40a93ebe.jpg';
+export const GALLERY_PC_EDITOR_LINK = 'https://file.5rs.me/oss/uploadfe/jpg/a269f6e0f980b31fd5c76bfe28e3d69b.jpg';
 // 画廊 - PC - 编辑器 - 图片
-export const GALLERY_PC_EDITOR_IMAGE = 'https://file.5rs.me/oss/uploadfe/jpg/4a02a8592987e319184c689b98c77cba.jpg';
+export const GALLERY_PC_EDITOR_IMAGE = 'https://file.5rs.me/oss/uploadfe/jpg/df18b0184e1ae34a5263828728184fdd.jpg';
 // 画廊 - PC - 编辑器 - 表情包
-export const GALLERY_PC_EDITOR_EMOJI = 'https://file.5rs.me/oss/uploadfe/jpg/0af0394e6f7e6bab78acdc35d6cd5667.jpg';
+export const GALLERY_PC_EDITOR_EMOJI = 'https://file.5rs.me/oss/uploadfe/jpg/da16470ef838b92134b6ba816b5ed970.jpg';
 
 // 画廊 - 设计规范 - PC - RAYS
 export const GALLERY_STANDARD_PC_RAYS = 'https://file.5rs.me/oss/uploadfe/jpg/9c691588ec8783ab0f490aaa7351c65d.jpg';

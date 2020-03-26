@@ -91,77 +91,82 @@ class Slider extends React.PureComponent {
       paginationIndex = 1;
     }
     return (
-      <div className={classNames('DashboardSlider pos-rel website-center-container', { animate })}>
-        <div className="slider-square_container">
-          <ul
-            className="slider-square_list transform-el"
-            style={{
-              width: `${this.sliderList.length}00%`,
-              transform: `translateX(-${100 / this.sliderList.length * index}%)`
-            }}
-          >
-            {
-              this.sliderList.map((item, i) => {
-                const active = index === i;
-                return (
-                  <li
-                    className={classNames('slider-square_item text-white pos-rel', { active })}
-                    style={{
-                      width: `${100 / this.sliderList.length}%`,
-                      backgroundColor: item.color
-                    }}
-                    key={i}
-                  >
-                    <div className="slider-square_title pos-abs">{item.title}</div>
-                    <div className="slider-square_desc pos-abs">{item.desc}</div>
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </div>
-
-        <div className="slider-content_container">
-          <ul
-            className="slider-content_list transform-el"
-            style={{
-              width: `${this.sliderList.length}00%`,
-              transform: `translateX(-${100 / this.sliderList.length * index}%)`
-            }}
-          >
-            {
-              this.sliderList.map((item, i) => {
-                const active = index === i;
-                return (
-                  <li
-                    className={classNames('slider-content_item pos-rel cursor-pointer', { active })}
-                    style={{
-                      width: `${100 / this.sliderList.length}%`,
-                      backgroundImage: `radial-gradient(${item.gradientColorList.join(', ')})`
-                    }}
-                    onClick={() => history.push(item.path)}
-                    key={i}
-                  >
-                    <Img
-                      className={classNames("slider-content_image", item.imgClass)}
-                      src={item.picture}
-                      intervalCheck
-                      objectFit="contain"
-                      lazy={false}
-                    />
-                  </li>
-                )
-              })
-            }
-          </ul>
-
-          <div className="slider-content_pagination">
-            <span className="slider-content_pagination-text">{Utils.padStart(paginationIndex)}&nbsp;&nbsp;/&nbsp;&nbsp;{Utils.padStart(list.length)}</span>
-
-            <span
-              className="slider-content_pagination-rotate cursor-pointer"
-              onClick={this.handleRotateClick}
+      <div
+        style={{
+          backgroundColor: 'white'
+        }}
+      >
+        <div className={classNames('DashboardSlider pos-rel website-center-container', { animate })}>
+          <div className="slider-square_container">
+            <ul
+              className="slider-square_list transform-el"
+              style={{
+                width: `${this.sliderList.length}00%`,
+                transform: `translateX(-${100 / this.sliderList.length * index}%)`
+              }}
             >
+              {
+                this.sliderList.map((item, i) => {
+                  const active = index === i;
+                  return (
+                    <li
+                      className={classNames('slider-square_item text-white pos-rel', { active })}
+                      style={{
+                        width: `${100 / this.sliderList.length}%`,
+                        backgroundColor: item.color
+                      }}
+                      key={i}
+                    >
+                      <div className="slider-square_title pos-abs">{item.title}</div>
+                      <div className="slider-square_desc pos-abs">{item.desc}</div>
+                    </li>
+                  )
+                })
+              }
+            </ul>
+          </div>
+
+          <div className="slider-content_container">
+            <ul
+              className="slider-content_list transform-el"
+              style={{
+                width: `${this.sliderList.length}00%`,
+                transform: `translateX(-${100 / this.sliderList.length * index}%)`
+              }}
+            >
+              {
+                this.sliderList.map((item, i) => {
+                  const active = index === i;
+                  return (
+                    <li
+                      className={classNames('slider-content_item pos-rel cursor-pointer', { active })}
+                      style={{
+                        width: `${100 / this.sliderList.length}%`,
+                        backgroundImage: `radial-gradient(${item.gradientColorList.join(', ')})`
+                      }}
+                      onClick={() => history.push(item.path)}
+                      key={i}
+                    >
+                      <Img
+                        className={classNames("slider-content_image", item.imgClass)}
+                        src={item.picture}
+                        intervalCheck
+                        objectFit="contain"
+                        lazy={false}
+                      />
+                    </li>
+                  )
+                })
+              }
+            </ul>
+
+            <div className="slider-content_pagination">
+              <span className="slider-content_pagination-text">{Utils.padStart(paginationIndex)}&nbsp;&nbsp;/&nbsp;&nbsp;{Utils.padStart(list.length)}</span>
+
+              <span
+                className="slider-content_pagination-rotate cursor-pointer"
+                onClick={this.handleRotateClick}
+              >
               <i className="ic ic-right f16" />
               <svg
                 viewBox="0 0 100 100"
@@ -175,12 +180,13 @@ class Slider extends React.PureComponent {
               />
             </svg>
             </span>
+            </div>
           </div>
-        </div>
 
-        <div className="slider-indicator text-center">
-          <span className="slider-indicator-tip">滑动</span>
-          <i className="ic ic-right" />
+          <div className="slider-indicator text-center">
+            <span className="slider-indicator-tip">滑动</span>
+            <i className="ic ic-right" />
+          </div>
         </div>
       </div>
     )
@@ -194,7 +200,7 @@ const list = [
     color: '#6067f2',
     gradientColorList: ['#6067f2 0%', '#4048e6 100%'],
     title: '后台设计',
-    desc: '偏向于系统交互设计，B to C都有所涵盖',
+    desc: 'B端设计深挖业务，交互与视觉应以商业价值为导向',
     path: PAGE.PC,
     picture: HOME_SLIDER_COMPUTER
   },
@@ -202,7 +208,7 @@ const list = [
     color: '#1ea992',
     gradientColorList: ['#1ea992 0%', '#0a947d 100%'],
     title: '移动端设计',
-    desc: '绝大数是基于微信的公众号H5网页移动端，也有小程序相关',
+    desc: '基于微信的公众号H5设计，以及小程序APP设计',
     picture: HOME_SLIDER_CELLPHONE,
     path: PAGE.MOBILE,
     imgClass: 'slider-image-cellphone'

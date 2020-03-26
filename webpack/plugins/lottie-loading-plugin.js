@@ -15,11 +15,13 @@ module.exports = class LottieLoadingPlugin {
 
     const {
       json,
-      containerId = DEFAULT_CONTAINER_ID,
+      loadingId = DEFAULT_ID,
       scriptCDN = DEFAULT_LOTTIE_SCRIPT_CDN,
       fileName = DEFAULT_JSON_FILE_NAME,
       style = '',
-      duration = 2000
+      duration = 2000,
+      width = '100%',
+      height = '100%'
     } = this.options;
 
     compiler.hooks.emit.tapAsync(PLUGIN_NAME, (compilation, callback) => {
@@ -32,7 +34,7 @@ module.exports = class LottieLoadingPlugin {
           // 添加CDN & 样式
           .replace('</head>', `<script src="${scriptCDN}" type="text/javascript"></script>
             <style>
-              #${containerId} {
+              #${DEFAULT_CONTAINER_ID} {
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -41,15 +43,24 @@ module.exports = class LottieLoadingPlugin {
                 z-index: 100000;
                 background-color: white;
               }
+              
+              #${loadingId} {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                width: ${width};
+                height: ${height};
+                transform: translate(-50%, -50%);
+              }
               ${style}
             </style>
           </head>`)
           // 添加Loading DOM节点 & 动画脚本
-          .replace('<body>', `<body><div id="${containerId}"></div><script id="${LOADING_SCRIPT_ID}" type="text/javascript">
+          .replace('<body>', `<body><div id="${DEFAULT_CONTAINER_ID}"><div id="${loadingId}"></div></div><script id="${LOADING_SCRIPT_ID}" type="text/javascript">
             var __initialLoadTimeStamp = Date.now();
             // 加载动画
             bodymovin.loadAnimation({
-              container: document.getElementById("${containerId}"),
+              container: document.getElementById("${loadingId}"),
               path: "${fileName}",
               renderer: 'svg',
               loop: true,
@@ -72,10 +83,10 @@ module.exports = class LottieLoadingPlugin {
               const now = Date.now();
               const diff = now - (__initialLoadTimeStamp + ${duration});
               if(diff >= 0) {
-                removeElById("${containerId}");
+                removeElById("${DEFAULT_CONTAINER_ID}");
               } else {
                 setTimeout(() => {
-                  removeElById("${containerId}");
+                  removeElById("${DEFAULT_CONTAINER_ID}");
                 }, -diff);
               }
             }, false);
@@ -91,5 +102,6 @@ module.exports = class LottieLoadingPlugin {
 
 const DEFAULT_LOTTIE_SCRIPT_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.6/lottie_svg.min.js';
 const DEFAULT_JSON_FILE_NAME = 'loading-lottie-data.json';
-const DEFAULT_CONTAINER_ID = '_lottieLoading';
+const DEFAULT_ID = '_lottieLoading';
+const DEFAULT_CONTAINER_ID = '_lottieLoadingContainer';
 const LOADING_SCRIPT_ID = '_lottieLoadingScript';

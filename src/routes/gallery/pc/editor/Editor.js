@@ -26,11 +26,17 @@ export default function Editor() {
 const COMMON_PROPS = {
   display: 'inline-block',
   className: 'mb30',
-  aspect: 0.825
+  aspect: 0.821
 };
 
 const DATA = {
-  desc: '编辑器的设计是因为开始都是引用的第三方编辑器，但是我们的服务对象主要是编辑人员，没有一个自有的编辑系统实在是说不过去，就开创了一套自有编辑器，这是19年上半年的项目。',
+  desc: (
+    <React.Fragment>
+      <p><b>项目背景：</b>产品服务对象主要是以内容生产者而服务，而编辑器作为最常用的编辑工具，须要有一套代表的原生编辑器。</p>
+      <p><b>产品定位：</b>功能涵盖全面，操作直观简单易用。</p>
+      <p><b>视觉风格：</b>与系统统一的视觉语言。</p>
+    </React.Fragment>
+  ),
   itemProps: COMMON_PROPS,
   content: [
     {
