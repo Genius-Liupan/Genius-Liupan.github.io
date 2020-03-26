@@ -27,4 +27,60 @@
     if(query.path) {
       var path = decodeURIComponent(query.path);
       window.history.replaceState(null, null, path);
-    }</script><link rel="stylesheet" href="https://at.alicdn.com/t/font_1628185_xrbyxjr7rkd.css"><link rel="shortcut icon" href="/favicon.ico"></head><body><div id="root"></div><script type="text/javascript" src="/runtime.2db56b002a0cb6c58646.js"></script><script type="text/javascript" src="/react.2db56b002a0cb6c58646.js"></script><script type="text/javascript" src="/vendors.2db56b002a0cb6c58646.js"></script><script type="text/javascript" src="/main.2db56b002a0cb6c58646.js"></script></body></html>
+    }</script><link rel="stylesheet" href="https://at.alicdn.com/t/font_1628185_xrbyxjr7rkd.css"><link rel="shortcut icon" href="/favicon.ico"><script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.6/lottie_svg.min.js" type="text/javascript"></script>
+            <style>
+              #_lottieLoadingContainer {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 100000;
+                background-color: white;
+              }
+              
+              #_lottieLoading {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                width: 2rem;
+                height: 2rem;
+                transform: translate(-50%, -50%);
+              }
+              
+            </style>
+          </head><body><div id="_lottieLoadingContainer"><div id="_lottieLoading"></div></div><script id="_lottieLoadingScript" type="text/javascript">
+            var __initialLoadTimeStamp = Date.now();
+            // 加载动画
+            bodymovin.loadAnimation({
+              container: document.getElementById("_lottieLoading"),
+              path: "loading-lottie-data.json",
+              renderer: 'svg',
+              loop: true,
+              autoplay: true,
+            });
+            
+            function removeElById(id) {
+              const el = document.getElementById(id);
+              if(el) {
+                el.parentElement.removeChild(el);
+              }
+            }
+            
+            // remove script element
+            setTimeout(function() {
+              removeElById("_lottieLoadingScript");
+            }, 1000);
+            
+            window.addEventListener('load', function() {
+              const now = Date.now();
+              const diff = now - (__initialLoadTimeStamp + 2300);
+              if(diff >= 0) {
+                removeElById("_lottieLoadingContainer");
+              } else {
+                setTimeout(() => {
+                  removeElById("_lottieLoadingContainer");
+                }, -diff);
+              }
+            }, false);
+          </script><div id="root"></div><script type="text/javascript" src="/runtime.9b09df9fd238059414ca.js"></script><script type="text/javascript" src="/react.9b09df9fd238059414ca.js"></script><script type="text/javascript" src="/vendors.9b09df9fd238059414ca.js"></script><script type="text/javascript" src="/main.9b09df9fd238059414ca.js"></script></body></html>
