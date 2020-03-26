@@ -11,7 +11,7 @@ COPY . /app/
 # 声明运行时的容器提供服务的端口
 EXPOSE 80
 
-RUN rm -rf node_modules/
+RUN rm -rf node_modules/ \
     && npm install --registry=https://registry.npm.taobao.org \
     && npm run build \
     && cp -r dist/* /usr/share/nginx/html
