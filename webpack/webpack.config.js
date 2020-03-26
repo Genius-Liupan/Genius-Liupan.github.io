@@ -1,5 +1,4 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const webpackUtils = require('./webpack-utils');
 
@@ -30,10 +29,10 @@ module.exports = {
             options: {
               ident: "postcss",
               plugins: [
-                require("_autoprefixer@9.7.4@autoprefixer")({
+                require("autoprefixer")({
                   browsers: ["last 10 versions", "not ie < 8"]
                 }),
-                require("_postcss-pxtorem@4.0.1@postcss-pxtorem")({
+                require("postcss-pxtorem")({
                   rootValue: 100,
                   unitPrecision: 5,
                   minPixelValue: 12,
