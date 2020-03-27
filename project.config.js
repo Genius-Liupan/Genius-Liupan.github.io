@@ -6,8 +6,8 @@ module.exports = {
   lottie: {
     json: lottieJSON,
     duration: 2300,
-    width: '2rem',
-    height: '2rem'
+    width: '200px',
+    height: '200px'
   },
   //proxy: {
   //  '/api': {

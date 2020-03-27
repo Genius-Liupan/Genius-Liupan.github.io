@@ -65,6 +65,7 @@ module.exports = class LottieLoadingPlugin {
               renderer: 'svg',
               loop: true,
               autoplay: true,
+              animationData: ${JSON.stringify(json)}
             });
             
             function removeElById(id) {
@@ -79,7 +80,7 @@ module.exports = class LottieLoadingPlugin {
               removeElById("${LOADING_SCRIPT_ID}");
             }, 1000);
             
-            window.addEventListener('load', function() {
+            window.addEventListener('DOMContentLoaded', function() {
               const now = Date.now();
               const diff = now - (__initialLoadTimeStamp + ${duration});
               if(diff >= 0) {
@@ -94,7 +95,6 @@ module.exports = class LottieLoadingPlugin {
       );
 
       // Copy lottie json
-      compilation.assets[fileName] = new RawSource(JSON.stringify(json));
       callback();
     });
   }
