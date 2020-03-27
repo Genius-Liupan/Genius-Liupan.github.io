@@ -5,7 +5,7 @@ module.exports = {
   port: 3000,
   lottie: {
     json: lottieJSON,
-    duration: 2300,
+    duration: 4000,
     width: '200px',
     height: '200px'
   },
