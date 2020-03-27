@@ -46,7 +46,7 @@ module.exports = class LottieLoadingPlugin {
               
               #${loadingId} {
                 position: absolute;
-                top: 45%;
+                top: 40%;
                 left: 50%;
                 width: ${width};
                 height: ${height};

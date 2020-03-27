@@ -4,7 +4,7 @@
  *  Declare : DesignCategory
  */
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import classNames from 'classnames';
 
 import FadeVisibilitySensor from '@/components/FadeVisibilitySensor';
@@ -19,6 +19,21 @@ export default function DesignCategory(props) {
   const { history } = props;
 
   const [index, setIndex] = useState(0);
+
+  const isMobile = window.innerWidth <= 414;
+
+  const handleCategoryClick = useCallback((category) => {
+    if(isMobile) {
+      history.push(category.link);
+    }
+  }, []);
+
+  const handleCategoryBtnClick = useCallback((category) => {
+    if(!isMobile) {
+      history.push(category.link);
+    }
+  }, []);
+
   return (
     <div className="DesignCategory">
       <div className="website-center-container pos-rel">
@@ -66,6 +81,7 @@ export default function DesignCategory(props) {
                   <div
                     className={classNames("design-category-item clearfix", { active })}
                     onMouseEnter={() => setIndex(categoryIndex)}
+                    onClick={() => handleCategoryClick(category)}
                   >
                     <Img
                       className="design-category-picture left"
@@ -77,7 +93,7 @@ export default function DesignCategory(props) {
                       <div className="design-category-desc">{category.desc}</div>
                       <span
                         className="check-detail-btn transition-bg-color right text-center cursor-pointer"
-                        onClick={() => history.push(category.link)}
+                        onClick={() => handleCategoryBtnClick(category)}
                       >
                         立即查看
                       </span>
