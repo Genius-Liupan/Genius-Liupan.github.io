@@ -165,4 +165,8 @@ export const GALLERY_OTHERS_IP = [
   'https://file.5rs.me/oss/uploadfe/jpg/65b27dd05db9d1c5b65d246df77eda51.jpg',
   'https://file.5rs.me/oss/uploadfe/jpg/5d152c5f765432bb6b60a5983aa4ee6b.jpg',
 ];
+// 画廊 - 其它 - HIM
+export const GALLERY_OTHERS_HMI = [
+  'https://file.5rs.me/oss/uploadfe/jpg/8489adadc3dc932b31874bd384d26687.jpg',
+];
 

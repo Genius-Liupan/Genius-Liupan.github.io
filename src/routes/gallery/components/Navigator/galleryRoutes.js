@@ -68,6 +68,10 @@ export default [
       {
         title: 'IP设计',
         link: PAGE.IP
+      },
+      {
+        title: 'HMI设计',
+        link: PAGE.HMI
       }
     ]
   }

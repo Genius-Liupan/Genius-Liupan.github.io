@@ -23,6 +23,7 @@ const PAGE = {
   OTHERS: '/gallery/others',
   INBETWEENING: '/gallery/others/inbetweening',
   IP: '/gallery/others/ip',
+  HMI: '/gallery/others/hmi',
 };
 
 export default PAGE;

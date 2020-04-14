@@ -11,6 +11,7 @@ export default {
   redirect: '/inbetweening',
   getChildren: () => [
     require('./inbetweening'),
-    require('./ip')
+    require('./ip'),
+    require('./hmi'),
   ]
 };
